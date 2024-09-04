@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Credit System</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.7.0/dist/web3.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        input[type="number"], input[type="text"] {
+            width: calc(100% - 24px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        #mineData, #creditValue {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Carbon Credit Management System</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>Input Fields</th>
+                    <th>Action Button</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Get Mine Data</td>
+                    <td>
+                        <input type="number" id="mineId" placeholder="Mine ID">
+                    </td>
+                    <td>
+                        <button onclick="getMineData(document.getElementById('mineId').value)">Get Mine Data</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Record Emissions</td>
+                    <td>
+                        <input type="number" id="emissionAmount" placeholder="Emission Amount">
+                    </td>
+                    <td>
+                        <button onclick="recordEmissions(document.getElementById('mineId').value, document.getElementById('emissionAmount').value)">Record Emissions</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Record Reductions</td>
+                    <td>
+                        <input type="number" id="reductionMineId" placeholder="Mine ID">
+                        <input type="number" id="reductionAmount" placeholder="Reduction Amount">
+                    </td>
+                    <td>
+                        <button onclick="recordReductions(document.getElementById('reductionMineId').value, document.getElementById('reductionAmount').value)">Record Reductions</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Transfer Credits</td>
+                    <td>
+                        <input type="number" id="fromMineId" placeholder="From Mine ID">
+                        <input type="number" id="toMineId" placeholder="To Mine ID">
+                        <input type="number" id="creditAmount" placeholder="Credit Amount">
+                    </td>
+                    <td>
+                        <button onclick="transferCredits(document.getElementById('fromMineId').value, document.getElementById('toMineId').value, document.getElementById('creditAmount').value)">Transfer Credits</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Penalize Mine</td>
+                    <td>
+                        <input type="number" id="penalizeMineId" placeholder="Mine ID">
+                    </td>
+                    <td>
+                        <button onclick="penalizeMine(document.getElementById('penalizeMineId').value)">Penalize Mine</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Update Market Rate</td>
+                    <td>
+                        <input type="text" id="marketRate" placeholder="New Market Rate (ETH)">
+                    </td>
+                    <td>
+                        <button onclick="updateMarketRate(document.getElementById('marketRate').value)">Update Market Rate</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Estimate Credit Value</td>
+                    <td>
+                        <input type="number" id="creditMineId" placeholder="Mine ID">
+                    </td>
+                    <td>
+                        <button onclick="getCreditValue(document.getElementById('creditMineId').value)">Get Credit Value</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="mineData"></div>
+        <div id="creditValue"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

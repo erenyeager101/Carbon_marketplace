@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoalMine Carbon Marketplace</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            background: url('back.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px 30px;
+            color: #fff;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 20px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #4CAF50;
+            border-radius: 4px;
+        }
+
+        .container {
+            text-align: center;
+            color: white;
+            padding: 100px 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.9);
+            width: 250px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: slideUp 1s ease-in-out;
+        }
+        
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: black;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        
+
+        .card p {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">CoalMine Carbon</div>
+        <div>
+            <a href="#coalmine-data">CoalMine Data</a>
+            <a href="#earn-credits">Earn Carbon Credits</a>
+            <a href="#marketplace">Marketplace</a>
+            <a href="index.html">Admin Login</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>CoalMine Carbon Marketplace</h1>
+        <h2>The Future of Sustainable Mining Starts Here</h2>
+        
+        <div class="cards">
+            <div class="card">
+                <img src="card1.png" alt="Carbon Offsets Providers">
+                <h3>Carbon Offsets Providers</h3>
+                <p>Partner with top organizations providing carbon offsets to balance your emissions.</p>
+            </div>
+            <div class="card">
+                <img src="card2.png" alt="Certified Verification Agencies">
+                <h3>Certified Verification Agencies</h3>
+                <p>Get your carbon credits verified by trusted agencies globally recognized.</p>
+            </div>
+            <div class="card">
+                <img src="card3.png" alt="Government Agencies">
+                <h3>Government Agencies</h3>
+                <p>Collaborate with government bodies ensuring compliance and regulations.</p>
+            </div>
+            <div class="card">
+                <img src="card4.png" alt="Indian Coal Mines">
+                <h3>Indian Coal Mines</h3>
+                <p>Explore the carbon footprint and credits of coal mines across India.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 CoalMine Carbon Marketplace. All rights reserved.
+    </div>
+</body>
+</html>
